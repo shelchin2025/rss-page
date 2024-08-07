@@ -1,0 +1,25 @@
+{
+  "name": "rss-aggregator",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.8.2",
+    "astro": "^4.13.1",
+    "buffer-shims": "^1.0.0",
+    "feed": "^4.2.2",
+    "feedme": "^2.0.2",
+    "feedparser": "^2.2.10",
+    "iconv-lite": "^0.6.3",
+    "node-fetch": "^3.3.2",
+    "rss-parser": "^3.13.0",
+    "typescript": "^5.5.3",
+    "xml-js": "^1.6.11"
+  }
+}
