@@ -74,6 +74,7 @@ jobs:
         run: |
           bun run scripts/fetchFeed.ts
 
+      - uses: actions/checkout@v4
       - uses: qoomon/actions--setup-git@v1
         with:
           user: bot
