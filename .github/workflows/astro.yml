@@ -73,14 +73,11 @@ jobs:
       - name: Fetch data
         run: |
           bun run scripts/fetchFeed.ts
-
-      - uses: actions/checkout@v4
-      - uses: qoomon/actions--setup-git@v1
-        with:
-          user: bot
           
       - name: Commit and push if changes
         run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
           git commit -m "Update data" || echo "No changes to commit"
           git push
