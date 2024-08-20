@@ -24,7 +24,7 @@ const filepath = path.resolve(
   `../public/data/feeds/all.json`,
 );
 
-const sortednews = _.sortBy(news, ["timestamp"], ["desc"]);
+const sortednews = _.orderBy(news, ["timestamp"], ["desc"]);
 console.log({ filepath });
 await Bun.write(filepath, JSON.stringify(sortednews));
 // exponential-backoff
