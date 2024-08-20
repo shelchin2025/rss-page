@@ -69,6 +69,19 @@ jobs:
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
         working-directory: ${{ env.BUILD_PATH }}
+      
+      - name: Fetch data
+        run: |
+          bun run scripts/fetchFeed.ts
+
+      - name: Commit and push if changes
+        run: |
+          git config --global user.email "bot@github.com"
+          git config --global user.name "Github Action"
+          git add -A
+          git commit -m "Update data" || echo "No changes to commit"
+          git push  
+     
       - name: Build with Astro
         run: |
           ${{ steps.detect-package-manager.outputs.runner }} build \
