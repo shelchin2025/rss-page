@@ -47,7 +47,7 @@ jobs:
           elif [ -f "${{ github.workspace }}/bun.lockb" ]; then
             echo "manager=bun" >> $GITHUB_OUTPUT
             echo "command=add" >> $GITHUB_OUTPUT
-            echo "runner=bunx --no-install" >> $GITHUB_OUTPUT
+            echo "runner=bun" >> $GITHUB_OUTPUT
             echo "lockfile=bun.lockb" >> $GITHUB_OUTPUT
             exit 0
           else
@@ -68,7 +68,7 @@ jobs:
         working-directory: ${{ env.BUILD_PATH }}
       - name: Build with Astro
         run: |
-          ${{ steps.detect-package-manager.outputs.runner }} astro build \
+          ${{ steps.detect-package-manager.outputs.runner }} build \
             --site "${{ steps.pages.outputs.origin }}" \
             --base "${{ steps.pages.outputs.base_path }}"
         working-directory: ${{ env.BUILD_PATH }}
