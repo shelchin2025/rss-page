@@ -74,10 +74,10 @@ jobs:
         run: |
           bun run scripts/fetchFeed.ts
 
-      # - uses: qoomon/actions--setup-git@v1
-      #   with:
-      #     user: bot
-
+      - uses: qoomon/actions--setup-git@v1
+        with:
+          user: bot
+          
       - name: Commit and push if changes
         run: |
           git config user.name 'github-actions[bot]'
