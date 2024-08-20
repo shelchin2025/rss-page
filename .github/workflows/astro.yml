@@ -49,7 +49,7 @@ jobs:
             exit 0
           elif [ -f "${{ github.workspace }}/bun.lockb" ]; then
             echo "manager=bun" >> $GITHUB_OUTPUT
-            echo "command=add" >> $GITHUB_OUTPUT
+            echo "command=install" >> $GITHUB_OUTPUT
             echo "runner=bun run " >> $GITHUB_OUTPUT
             echo "lockfile=bun.lockb" >> $GITHUB_OUTPUT
             exit 0
