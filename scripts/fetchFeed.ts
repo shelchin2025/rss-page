@@ -21,11 +21,17 @@ for (let i = 0; i < feeds.length; i++) {
 
 const filepath = path.resolve(
   __dirname,
-  `../public/data/feeds/all.json`,
+  `../src/content/feeds/all.json`,
 );
 
 const sortednews = _.orderBy(news, ["timestamp"], ["desc"]);
 console.log({ filepath });
-await Bun.write(filepath, JSON.stringify(sortednews));
+await Bun.write(
+  filepath,
+  JSON.stringify({
+    collection: "All",
+    entries: sortednews,
+  }),
+);
 // exponential-backoff
 // https://superchargejs.com/docs/3.x/promise-pool

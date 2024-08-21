@@ -8,7 +8,7 @@ export const feeds = [
     "url": "https://lemire.me/blog/feed/",
   },
   {
-    "title":"阮一峰的网络日志",
-    "url":"https://www.ruanyifeng.com/blog/atom.xml"
-  }
+    "title": "阮一峰的网络日志",
+    "url": "https://www.ruanyifeng.com/blog/atom.xml",
+  },
 ];

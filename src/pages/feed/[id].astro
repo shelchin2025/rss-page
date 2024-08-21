@@ -1,21 +1,35 @@
 ---
-import PageMeta from "../components/PageMeta.astro";
-import PageLayout from "../layouts/PageLayout.astro";
-import Intro from "../components/Intro.astro";
-import { SITE_TITLE } from "../config";
+import PageMeta from "../../components/PageMeta.astro";
+import PageLayout from "../../layouts/PageLayout.astro";
+import Intro from "../../components/Intro.astro";
+import { SITE_TITLE } from "../../config";
 import { getEntry } from "astro:content";
 import dayjs from "dayjs";
+import { feeds } from "../../config/common";
+// @ts-ignore
+import md5 from "md5";
 
-const resp = await getEntry("feeds", "all");
-console.log({resp})
+// 定义 getStaticPaths 函数
+export async function getStaticPaths() {
+  // 根据文件名生成路径数组
+  return feeds.map((feed) => {
+    return {
+      params: {
+        id: md5(feed.url),
+      },
+    };
+  });
+}
+const { id } = Astro.params;
+
+const resp:any = await getEntry("feeds", id);
 const {entries,collection} = resp.data;
 ---
 
 <PageLayout>
   <PageMeta title={`${SITE_TITLE} `} slot="meta" />
   <Fragment slot="main">
-    <Intro  collection={collection}/>
-
+    <Intro collection={collection} />
     <section>
       <ul>
         {

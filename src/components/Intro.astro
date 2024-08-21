@@ -1,0 +1,22 @@
+---
+import { feeds } from "../config/common";
+// import { md5 } from "hash-wasm";
+// @ts-ignore
+import md5 from "md5";
+const { collection } = Astro.props;
+---
+
+<section class="mt-12">
+  <div>
+    <div class="my-8 gap-2 flex flex-wrap">
+      <a href="/"> All </a>
+      {
+        feeds.map((feed) => {
+          return <a href={`/feed/${md5(feed.url)}`} class="opacity-85">{feed.title}</a>;
+        })
+      }
+    </div>
+
+    <h1 class="font-bold">{collection}</h1>
+  </div>
+</section>

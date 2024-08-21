@@ -38,7 +38,7 @@ export const downloadFeed = async (feedUrl: string, feedTitle: string) => {
       "author": item.author ?? item.creator,
       "rawPubDate": item.pubDate,
       "timestamp": dayjs(item.pubDate).unix(),
-      "summary": item.summary ?? (item.contentSnippet ?? item.content),
+      // "summary": item.summary ?? (item.contentSnippet ?? item.content),
     };
   });
 
@@ -48,11 +48,17 @@ export const downloadFeed = async (feedUrl: string, feedTitle: string) => {
 
   const filepath = path.resolve(
     __dirname,
-    `../public/data/feeds/${filename}.json`,
+    `../src/content/feeds/${filename}.json`,
   );
 
   console.log({ filepath });
-  await Bun.write(filepath, JSON.stringify(entries));
+  await Bun.write(
+    filepath,
+    JSON.stringify({
+      collection: feedTitle,
+      entries,
+    }),
+  );
   return entries;
   // console.log(feed)
 };
