@@ -5,17 +5,17 @@ import Intro from "../components/Intro.astro";
 import { SITE_TITLE } from "../config";
 import { getEntry } from "astro:content";
 import dayjs from "dayjs";
- 
-const resp = await getEntry("feeds", "all");
-console.log({resp})
 
-const {entries,collection} = resp.data;
+const resp = await getEntry("feeds", "all");
+console.log({ resp });
+
+const { entries, collection } = resp.data;
 ---
 
 <PageLayout>
   <PageMeta title={`${SITE_TITLE} `} slot="meta" />
   <Fragment slot="main">
-    <Intro  collection={collection}/>
+    <Intro collection={collection} />
 
     <section>
       <ul>
@@ -44,7 +44,11 @@ const {entries,collection} = resp.data;
                       </span>
                     </a>
                   ) : (
-                    <a href={post.link} class="unset hover:text-text-link">
+                    <a
+                      href={post.link}
+                      target="_blank"
+                      class="unset hover:text-text-link"
+                    >
                       {post.title}
                     </a>
                   )}

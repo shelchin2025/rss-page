@@ -22,8 +22,8 @@ export async function getStaticPaths() {
 }
 const { id } = Astro.params;
 
-const resp:any = await getEntry("feeds", id);
-const {entries,collection} = resp.data;
+const resp: any = await getEntry("feeds", id);
+const { entries, collection } = resp.data;
 ---
 
 <PageLayout>
@@ -57,7 +57,11 @@ const {entries,collection} = resp.data;
                       </span>
                     </a>
                   ) : (
-                    <a href={post.link} class="unset hover:text-text-link">
+                    <a
+                      href={post.link}
+                      target="_blank"
+                      class="unset hover:text-text-link"
+                    >
                       {post.title}
                     </a>
                   )}

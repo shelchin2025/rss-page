@@ -1,15 +1,16 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
 import DarkModeToggle from "./DarkModeToggle.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 ---
 
-<header class="mb-12">
-  <a
+<header class="mb-20">
+  <!-- <a
     class="unset absolute z-10 left-[50%] -top-[100rem] translate-x-[-50%] bg-white text-black px-8 py-2 focus:top-[initial]"
     href="#main"
   >
     Skip to content
-  </a>
+  </a> -->
 
   <nav>
     <div class="mb-4">
@@ -19,14 +20,15 @@ import DarkModeToggle from "./DarkModeToggle.astro";
         <span
           class="bg-gradient-to-br from-[#fb923c] via-[#f97316] to-[#ea580c] dark:from-primary-main dark:via-primary-main dark:to-primary-main bg-clip-text text-transparent"
         >
-          RSS Page
+          {SITE_TITLE}
         </span>
       </h1>
-      <p class="text-base sm:text-lg my-2">
-        Craft your feed with RSS, escape the algorithm.
-      </p>
+    </div>
+    <div class="text-base sm:text-lg my-2">
+      {SITE_DESCRIPTION}
     </div>
   </nav>
+
   <div
     class="max-[375px]:hidden justify-self-end py-2 flex items-center content-center text-text-bold"
   >
