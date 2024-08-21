@@ -1,12 +1,12 @@
-# RSS Aggregator
+# RSS Page
 
-## How to create your own RSS Aggregator
+## Generate my rss feeds to github page
 
 ### Step 1: Fork this Repository
 
 ### Step 2: Modify a Configuration
-1. Edit the subscription sources in `src/config.ts` under the feeds section.
 
+1. Edit the subscription sources in `src/config.ts` under the feeds section.
 
 ### Step 3: Set Up GitHub Pages
 
