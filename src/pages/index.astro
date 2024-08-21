@@ -5,9 +5,10 @@ import Intro from "../components/Intro.astro";
 import { SITE_TITLE } from "../config";
 import { getEntry } from "astro:content";
 import dayjs from "dayjs";
-
+ 
 const resp = await getEntry("feeds", "all");
 console.log({resp})
+
 const {entries,collection} = resp.data;
 ---
 
