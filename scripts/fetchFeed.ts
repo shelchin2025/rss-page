@@ -1,7 +1,7 @@
 import { backOff } from "exponential-backoff";
 import path from "path";
 import _ from "lodash";
-import { feeds } from "../src/config/common";
+import { feeds } from "../src/config";
 import { downloadFeed } from "./utils";
 
 console.log({ feeds });
