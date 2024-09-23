@@ -19,5 +19,9 @@ export const feeds = [
   {
     "title": "阮一峰的网络日志",
     "url": "https://www.ruanyifeng.com/blog/atom.xml",
+  },
+  {
+    "title:"smallyu的博客",
+    "url":"https://smallyu.net/atom.xml"
   }
 ];
