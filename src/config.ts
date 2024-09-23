@@ -23,5 +23,9 @@ export const feeds = [
   {
     "title:"smallyu的博客",
     "url":"https://smallyu.net/atom.xml"
+  },
+  {
+    "title":"Jim Nielsen’s Blog",
+    "url":"https://blog.jim-nielsen.com/feed.xml"
   }
 ];
