@@ -21,7 +21,7 @@ export const feeds = [
     "url": "https://www.ruanyifeng.com/blog/atom.xml",
   },
   {
-    "title:"smallyu的博客",
+    "title:"smallyu",
     "url":"https://smallyu.net/atom.xml"
   },
   {
