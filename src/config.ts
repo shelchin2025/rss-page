@@ -27,5 +27,9 @@ export const feeds = [
   {
     "title":"Jim Nielsen’s Blog",
     "url":"https://blog.jim-nielsen.com/feed.xml"
+  },
+  {
+    "title":"joepie91's Ramblings",
+    "url":"http://cryto.net/~joepie91/blog/feed.xml"
   }
 ];
