@@ -31,5 +31,13 @@ export const feeds = [
   {
     "title":"joepie91's Ramblings",
     "url":"http://cryto.net/~joepie91/blog/feed.xml"
-  }
+  },
+  {
+    "title":"samhenri gold",
+    "url":"https://samhenri.gold/feed.xml"
+  },
+    {
+    "title":"Jim Nielsen’s Blog",
+    "url":"https://blog.jim-nielsen.com/feed.xml"
+  },
 ];
